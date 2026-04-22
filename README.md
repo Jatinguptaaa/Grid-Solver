@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Grid Solver (Sudoku Solver)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple and interactive web app to solve 9x9 Sudoku grids.
+
+Users can enter values manually, generate a random puzzle seed, validate the board, and solve the puzzle using a backtracking algorithm.
+
+## Features
+
+- 9x9 interactive Sudoku grid input
+- Accepts only digits 1 to 9 in cells
+- Real-time invalid cell detection (row, column, and 3x3 sub-grid conflicts)
+- Visual highlighting for selected row, column, and sub-grid
+- `Solve` button to solve puzzle using backtracking
+- `Reset` button to restore the default puzzle
+- `Random` button to generate a random valid seed puzzle
+- Status messages for invalid grid, solved state, or unsolvable input
+
+## How It Works
+
+The solver uses a recursive backtracking approach:
+
+1. Find an empty cell.
+2. Try numbers 1 through 9.
+3. Check if the number is valid in current row, column, and 3x3 box.
+4. Recurse to solve the rest of the board.
+5. Backtrack if no valid number works.
+
+This guarantees a correct solution when one exists.
+
+## Tech Stack
+
+- React 19
+- JavaScript (ES6+)
+- Create React App (`react-scripts`)
+- CSS for styling
+
+## Project Structure
+
+```text
+sudoku-app/
+	package.json          # Project scripts and dependencies
+	README.md             # Project documentation
+	public/
+		index.html          # App HTML template
+	src/
+		App.js              # Main Sudoku UI and solver logic
+		App.css             # Component styling
+		index.js            # React app entry point
+		index.css           # Global styles
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18+ recommended)
+- npm
+
+### Installation
+
+```bash
+npm install
+```
+
+### Run in Development
+
+```bash
+npm start
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Available Scripts
 
-In the project directory, you can run:
+- `npm start` - Run the app in development mode
+- `npm test` - Run tests in watch mode
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
