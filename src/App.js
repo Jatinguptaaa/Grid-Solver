@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
 
-const SIZE = 9;
-
 const defaultPuzzle = [
   ["5", "3", "", "", "7", "", "", "", ""],
   ["6", "", "", "1", "9", "5", "", "", ""],
@@ -23,8 +21,8 @@ export default function App() {
 
   const isValid = (board, row, col, num) => {
     for (let x = 0; x < 9; x++) {
-      if (x !== col && board[row][x] == num) return false;
-      if (x !== row && board[x][col] == num) return false;
+if (x !== col && board[row][x] === num) return false;
+if (x !== row && board[x][col] === num) return false;
     }
 
     let sr = Math.floor(row / 3) * 3;
@@ -34,7 +32,7 @@ export default function App() {
       for (let j = 0; j < 3; j++) {
         let r = sr + i,
           c = sc + j;
-        if ((r !== row || c !== col) && board[r][c] == num) return false;
+        if ((r !== row || c !== col) && board[r][c] === num) return false;
       }
 
     return true;
